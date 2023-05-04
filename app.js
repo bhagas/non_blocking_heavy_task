@@ -24,32 +24,32 @@ app.get('/test', (req, res) => {
 	res.status(200).json(['a','b','c']);
 })
 
-function test1(callback) {
-	setTimeout(function() {
-		var prime = 0;
-		var flag = true;
-		for (var i = 3; i < 400000; i++) {
-			flag = true;
-			for (var j = 2; j < i; j++) {
-				if (i % j === 0) {
-					flag = false;
-					break;
-				}
-			}
-			if (flag) {
-				console.log(i);
-				prime += 1;
-			}
-		}
-		callback(prime);
-	}, 0);
-}
+// function test1(callback) {
+// 	setTimeout(function() {
+// 		var prime = 0;
+// 		var flag = true;
+// 		for (var i = 3; i < 400000; i++) {
+// 			flag = true;
+// 			for (var j = 2; j < i; j++) {
+// 				if (i % j === 0) {
+// 					flag = false;
+// 					break;
+// 				}
+// 			}
+// 			if (flag) {
+// 				console.log(i);
+// 				prime += 1;
+// 			}
+// 		}
+// 		callback(prime);
+// 	}, 0);
+// }
 
-app.get('/test_async', (req, res) => {
-  test1(function (msg) {
-    res.status(200).json(['a','b','c']);
-  });
-})
+// app.get('/test_async', (req, res) => {
+//   test1(function (msg) {
+//     res.status(200).json(['a','b','c']);
+//   });
+// })
 
 
 app.listen(port, () => {
